@@ -32,7 +32,6 @@ func Verify(w http.ResponseWriter, r *http.Request) {
 	q.Add("secret", "123123123123key123123123")
 	req.URL.RawQuery = q.Encode()
 
-	// rawResp, err := hyper.Client().Do(req)
 	rawResp, err := http.Get(endpoint)
 
 	if err != nil {
@@ -47,8 +46,6 @@ func Verify(w http.ResponseWriter, r *http.Request) {
 		log.Print("error decoding recaptcha body")
 		return
 	}
-
-	// hyper.Success(ctx, w, respBody)
 }
 
 func errorResponse(w http.ResponseWriter, err error, message string) {
