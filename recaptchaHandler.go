@@ -1,4 +1,4 @@
-package recaptcha
+package recaptchaValidator
 
 import (
 	"encoding/json"
